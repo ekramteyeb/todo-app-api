@@ -1,5 +1,53 @@
 
-<p>PHP-laravel-API-app</p>
+##<p>PHP-laravel-API-app</p>
+Steps to Run the app in your local machin: 
+
+
+##Required  to install : 
+- php 
+- composer 
+- laravel framework
+- POSTMAN(preferable)
+
+- postgres , or mysql database (should be configured in .env file), start it in your local machine and should be connected it to the application. Configuring (DB_) fields in .env file would be enough to connect to database.
+
+* clone from repo and save it
+* move to the root directory ie. todo-app
+    * cd todo-app-api  
+* open it with your text editor and create .env file in the root 
+* copy everything from .env.example file and paste it in .env file 
+
+* run composer install : 
+    * composer install 
+
+* Generate application key by running : 
+    * php artisan key:generate
+    * copy and assign it to APP_KEY= variable in .env file 
+
+* Then start the app: 
+    * php artisan serve
+
+* End points to the API resources are as follows. Since all of them are protected by laravel/sanctum , you need to start by registering via ‘/v1/register’ route . 
+
+    * http:localhost:8000/api/v1/register
+        * need attributes : email , password, confirm_password, name 
+
+    * http:localhost:8000/api/v1/login 
+        * using : email , password
+
+* Then free to go and use Postman easier to play around with 
+* 
+    * GET : http:localhost:8000/api/v1/todos   // get all todos
+* 
+    * GET : http:localhost:8000/api/v1/todos/id  // individial todo
+
+    * POST : http:localhost:8000/api/v1/todos   // post  a todo
+        * name field is required 
+			
+    * PUT : http:localhost:8000/api/v1/todos/id?status // since ‘status’ is the only required field here
+
+    * DELETE :  http:localhost:8000/api/v1/todos/id. 
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
