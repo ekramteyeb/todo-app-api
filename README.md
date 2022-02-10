@@ -43,10 +43,15 @@ Steps to Run the app in your local machin:
 
     * POST : http:localhost:8000/api/v1/todos   // post  a todo
         * name field is required 
-			
-    * PUT : http:localhost:8000/api/v1/todos/id?status // since ‘status’ is the only required field here
+        * description
+        * status 
+    * PUT : http:localhost:8000/api/v1/todos/id?status // since ‘status’ is the only required field here N.B only values ['NotStarted', 'OnGoing', 'Completed'] are allowed. 
 
     * DELETE :  http:localhost:8000/api/v1/todos/id. 
+
+## Features to add : 
+* changePassword
+* status query  
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
