@@ -65,7 +65,11 @@ class TodoController extends BaseController
         if($validator->fails()){
             return $this->handleError($validator->errors());       
         }
-
+         //check if the user is the owner of the todo
+        if( $todo['user_id'] != Auth::id()){
+            return $this->handleError('Unauthorized operation'); 
+        }
+        //check if a given column value is provided and insert , else leave intact 
         $todo->name = $request->name ? $input['name'] : $todo->name;
         $todo->description = $request->description ? $input['description'] : $todo->description ;
         $todo->status = $request->status ? $input['status'] : $todo->status;
@@ -76,6 +80,10 @@ class TodoController extends BaseController
    
     public function destroy(Todo $todo)
     {
+        //check if the user is the owner of the todo
+        if( $todo['user_id'] != Auth::id()){
+            return $this->handleError('Unauthorized operation'); 
+        }
         $todo->delete();
         return $this->handleResponse([], 'Todo deleted!');
     }
