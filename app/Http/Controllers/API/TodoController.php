@@ -28,12 +28,15 @@ class TodoController extends BaseController
         $input = $request->all();
         $validator = Validator::make($input, [
             'name' => 'required',
-            'status' => 'nullable'
+            'status' => 'nullable',
+            'user_id' => 'nullable',
         ]);
         if($validator->fails()){
             //return $this->handleError($validator->errors());       
             return $this->handleError($validator->errors('cannot do it'));       
         }
+        //$input->user_id = Auth::id();
+        $input['user_id'] = Auth::id();
         $todo = Todo::create($input);
         return $this->handleResponse(new TodoResource($todo), 'Todo created!');
     }
