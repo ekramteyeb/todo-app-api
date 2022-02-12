@@ -1,9 +1,19 @@
 
-##<p>PHP-laravel-API-app</p>
-Steps to Run the app in your local machin: 
-Features : 
+## <p>PHP-laravel-API-app</p>
+ 
+## A personal todo app api 
 
+Features : 
 -user register/login
+-authentication/authorization
+-uses can read, edit , delete only thier own todos
+-password encryption
+-a user can create multiple todos 
+-a todo is owen by a user 
+
+
+
+
 
 ##Required  to install : 
 - php 
@@ -12,6 +22,8 @@ Features :
 - POSTMAN(preferable)
 
 - postgres , or mysql database (should be configured in .env file), start it in your local machine and should be connected it to the application. Configuring (DB_) fields in .env file would be enough to connect to database.
+
+## Steps to Run the app in your local machin:
 
 * clone from repo and save it
 * move to the root directory ie. todo-app
@@ -31,23 +43,27 @@ Features :
 
 * End points to the API resources are as follows. Since all of them are protected by laravel/sanctum , you need to start by registering via ‘/v1/register’ route . 
 
-    * http:localhost:8000/api/v1/register
+    *POST :  http//localhost:8000/api/v1/register
         * need attributes : email , password, confirm_password, name 
 
-    * http:localhost:8000/api/v1/login 
+    *Post :  http//localhost:8000/api/v1/login 
         * using : email , password
 
-* Then free to go and use Postman easier to play around with 
+* Then free to go and use Postman it  easier to play around with. 
+     N.B the returned token should be send back to server via Bearer token header or other way
 * 
-    * GET : http:localhost:8000/api/v1/todos   // get all todos
+    * GET : http//localhost:8000/api/v1/todos   // get all the todos of the user
 * 
-    * GET : http:localhost:8000/api/v1/todos/id  // individial todo
+    * GET : http//localhost:8000/api/v1/todos/id  // individial todo
 
-    * POST : http:localhost:8000/api/v1/todos   // post  a todo
-        * name field is required 
-        * description
-        * status 
-    * PUT : http:localhost:8000/api/v1/todos/id?status // since ‘status’ is the only required field here N.B only values ['NotStarted', 'OnGoing', 'Completed'] are allowed. 
+    * POST : http//localhost:8000/api/v1/todos   // post  a todo
+        * name ----  is required 
+        * description ---optional 
+        * status ---optional(but must be ['OnGoing' , 'NotStarted', 'Completed'] , default is 'NotStarted')
+
+    * PUT : http//localhost:8000/api/v1/todos/id?status='thestatus' // using params is recommended
+
+    N.B only values ['NotStarted', 'OnGoing', 'Completed'] are allowed. 
 
     * DELETE :  http:localhost:8000/api/v1/todos/id. 
 
