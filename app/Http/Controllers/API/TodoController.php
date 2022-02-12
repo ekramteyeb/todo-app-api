@@ -28,12 +28,13 @@ class TodoController extends BaseController
         $input = $request->all();
         $validator = Validator::make($input, [
             'name' => 'required',
-            'status' => 'nullable',
+            'status' => 'nullable',/* , Rule::in(['NotStarted','OnGoing','Completed']) */
             'user_id' => 'nullable',
+           
         ]);
         if($validator->fails()){
             //return $this->handleError($validator->errors());       
-            return $this->handleError($validator->errors('cannot do it'));       
+            return $this->handleError($validator->errors());       
         }
         //$input->user_id = Auth::id();
         $input['user_id'] = Auth::id();
@@ -56,17 +57,18 @@ class TodoController extends BaseController
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'status' => 'required'
+            'status' => 'nullable',
+            'description' => 'nullable' ,
+            'name' => 'nullable'
         ]);
 
         if($validator->fails()){
             return $this->handleError($validator->errors());       
         }
 
-        /* $todo->name = $input['name'];
-        $todo->description = $input['description']; */
-        $todo->status = $input['status'];
-        //$todo->user_id = $input['user_id'];
+        $todo->name = $request->name ? $input['name'] : $todo->name;
+        $todo->description = $request->description ? $input['description'] : $todo->description ;
+        $todo->status = $request->status ? $input['status'] : $todo->status;
         $todo->save();
         
         return $this->handleResponse(new TodoResource($todo), 'Todo successfully updated!');
