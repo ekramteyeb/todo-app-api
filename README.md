@@ -1,7 +1,9 @@
 
 ##<p>PHP-laravel-API-app</p>
 Steps to Run the app in your local machin: 
+Features : 
 
+-user register/login
 
 ##Required  to install : 
 - php 
