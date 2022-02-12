@@ -1,7 +1,8 @@
 <?php
    
 namespace App\Http\Controllers\API;
-   
+
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 use App\Http\Resources\Todo as TodoResource;
@@ -14,7 +15,10 @@ class TodoController extends BaseController
 
     public function index()
     {
-        $todos = Todo::all();
+        //$todos = Todo::all();
+        //get todos by user_id
+        $todos = Todo::where('user_id', Auth::id())->get();
+
         return $this->handleResponse(TodoResource::collection($todos), 'Todos have been retrieved!');
     }
 
