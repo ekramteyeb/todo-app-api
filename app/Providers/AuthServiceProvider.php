@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Todo;
+use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -24,7 +26,13 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
-        //
+        //Autorization to do update && delete operation 
+        Gate::define('update-todo', function (User $user, Todo $todo) {
+            return $user->id === $todo->user_id;
+        });
+        Gate::define('delete-todo', function (User $user, Todo $todo) {
+            return $user->id === $todo->user_id;
+        });
     }
+
 }

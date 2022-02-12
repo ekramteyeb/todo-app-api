@@ -8,6 +8,7 @@ use App\Http\Controllers\API\BaseController as BaseController;
 use App\Http\Resources\Todo as TodoResource;
 use App\Models\Todo;
 use Validator;
+use Illuminate\Support\Facades\Gate;
 
 
 class TodoController extends BaseController
@@ -18,7 +19,6 @@ class TodoController extends BaseController
         //$todos = Todo::all();
         //get todos by user_id
         $todos = Todo::where('user_id', Auth::id())->get();
-
         return $this->handleResponse(TodoResource::collection($todos), 'Todos have been retrieved!');
     }
 
@@ -54,6 +54,15 @@ class TodoController extends BaseController
 
     public function update(Request $request, Todo $todo)
     {
+        //autorization done by Gate which is configured in Providers/AuthServiceProvider.php
+        if(!Gate::allows('update-todo', $todo)){
+            abort(403);
+        }
+
+        //Similarly authorization can be done manually like this ,check if the user is the owner of the todo
+        /* if( $todo['user_id'] != Auth::id()){
+            return $this->handleError('Unauthorized operation'); 
+        } */
         $input = $request->all();
 
         $validator = Validator::make($input, [
@@ -65,10 +74,7 @@ class TodoController extends BaseController
         if($validator->fails()){
             return $this->handleError($validator->errors());       
         }
-         //check if the user is the owner of the todo
-        if( $todo['user_id'] != Auth::id()){
-            return $this->handleError('Unauthorized operation'); 
-        }
+         
         //check if a given column value is provided and insert , else leave intact 
         $todo->name = $request->name ? $input['name'] : $todo->name;
         $todo->description = $request->description ? $input['description'] : $todo->description ;
@@ -81,9 +87,12 @@ class TodoController extends BaseController
     public function destroy(Todo $todo)
     {
         //check if the user is the owner of the todo
-        if( $todo['user_id'] != Auth::id()){
-            return $this->handleError('Unauthorized operation'); 
+        if(!Gate::allows('delete-todo', $todo)){
+            abort(403);
         }
+        /* if( $todo['user_id'] != Auth::id()){
+            return $this->handleError('Unauthorized operation'); 
+        } */
         $todo->delete();
         return $this->handleResponse([], 'Todo deleted!');
     }
