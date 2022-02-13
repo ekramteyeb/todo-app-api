@@ -1,17 +1,16 @@
 
-## <p>PHP-laravel-API-app</p> : 
+## <p>PHP-laravel-API-app</p>
  
 ## A personal todo api 
 
 Features : 
--user register/login
--authentication/authorization
--uses can read, edit , delete only thier own todos
--password encryption
--a user can create multiple todos 
--a todo is owend by a user 
-_a status
-query param can be included to return only todos of specific status
+- user register/login
+- authentication/authorization
+- uses can read, edit , delete only thier own todos
+- password encryption
+- a user can create multiple todos 
+- a todo is owend by a user 
+_ a status query param can be included to return only todos of specific status
 
 
 ## Required  to install : 
@@ -20,14 +19,15 @@ query param can be included to return only todos of specific status
 - laravel framework
 - POSTMAN(preferable)
 
-- postgres , or mysql database (should be configured in .env file), start it in your local machine and should be connected it to the application. Configuring (DB_) fields in .env file would be enough to connect to database.
+- postgres , or mysql database (should be configured in .env file), start it in local machine and should be connected to the application. Configuring (DB_) fields in .env file would be enough to connect to the database.
 
 ## Steps to Run the app in your local machin:
 
 * clone from repo and save it
+    * git clone url    
 * move to the root directory ie. todo-app
     * cd todo-app-api  
-* open it with your text editor and create .env file in the root 
+* open it with  text editor and create .env file in the root
 * copy everything from .env.example file and paste it in .env file 
 
 * run composer install : 
@@ -40,22 +40,25 @@ query param can be included to return only todos of specific status
 * Then start the app: 
     * php artisan serve
 
-* End points to the API resources are as follows. Since all of them are protected by laravel/sanctum , you need to start by registering via ‘/v1/register’ route . 
+## End points to the API resources 
+Since all of routes are protected by laravel/sanctum , first thing needed is  to start by registering via ‘/v1/register’ route . 
 
-    *POST :  http//localhost:8000/api/v1/register
+    * POST :  http//localhost:8000/api/v1/register
         * need attributes : email , password, confirm_password, name 
 
-    *Post :  http//localhost:8000/api/v1/login 
+    * Post :  http//localhost:8000/api/v1/login 
         * using : email , password
 
-* Then free to go and use Postman it  easier to play around with. 
+* Then free to go. Postman is  handy tool  play around with this. 
      N.B the returned token should be send back to server via Bearer token header or other way
-* 
-    * GET : http//localhost:8000/api/v1/todos   // get all the todos of the user
-* 
-    * GET : http//localhost:8000/api/v1/todos/id  // individial todo
 
-    * POST : http//localhost:8000/api/v1/todos   // post  a todo
+    * GET : http//localhost:8000/api/v1/todos   // get all the todos of the user
+
+    * GET : http//localhost:8000/api/v1/todos?status='status'   // get specific todos filterd by status
+
+    * GET : http//localhost:8000/api/v1/todos/id 
+
+    * POST : http//localhost:8000/api/v1/todos   
         * name ----  is required 
         * description ---optional 
         * status ---optional(but must be ['OnGoing' , 'NotStarted', 'Completed'] , default is 'NotStarted')
