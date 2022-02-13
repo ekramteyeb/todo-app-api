@@ -14,13 +14,16 @@ use Illuminate\Support\Facades\Gate;
 class TodoController extends BaseController
 {
 
-    public function index()
+    public function index(Request $request)
     {
         //$todos = Todo::all();
-        //get todos by user_id
-        $todos = Todo::where('user_id', Auth::id())->get();
+       
+        $todos = Todo::where('user_id', Auth::id())->when(isset($request->status), function($query) use ($request) {
+            $query->where('status','=', $request->status);
+        })->get();
         return $this->handleResponse(TodoResource::collection($todos), 'Todos have been retrieved!');
     }
+    
 
     
     public function store(Request $request)

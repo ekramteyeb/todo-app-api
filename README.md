@@ -1,7 +1,7 @@
 
-## <p>PHP-laravel-API-app</p>
+## <p>PHP-laravel-API-app</p> : 
  
-## A personal todo app api 
+## A personal todo api 
 
 Features : 
 -user register/login
@@ -9,13 +9,12 @@ Features :
 -uses can read, edit , delete only thier own todos
 -password encryption
 -a user can create multiple todos 
--a todo is owen by a user 
+-a todo is owend by a user 
+_a status
+query param can be included to return only todos of specific status
 
 
-
-
-
-##Required  to install : 
+## Required  to install : 
 - php 
 - composer 
 - laravel framework
@@ -69,7 +68,7 @@ Features :
 
 ## Features to add : 
 * changePassword
-* status query  
+ 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 

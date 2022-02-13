@@ -17,6 +17,7 @@ use App\Http\Controllers\API\AuthController;
 */
 
 Route::middleware('auth:sanctum')->group( function () {
+    
     Route::resource('/v1/todos', TodoController::class);
 });
 
