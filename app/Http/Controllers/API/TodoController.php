@@ -41,6 +41,7 @@ class TodoController extends BaseController
         }
         //$input->user_id = Auth::id();
         $input['user_id'] = Auth::id();
+        $input['status'] = $request['status'] ? $input['status'] : 'NotStarted'; 
         $todo = Todo::create($input);
         return $this->handleResponse(new TodoResource($todo), 'Todo created!');
     }
