@@ -48,7 +48,7 @@ class TodoController extends BaseController
     public function show($id)
     {
         $todo = Todo::find($id);
-        if (is_null($todo)) {
+        if (is_null($todo) || ($todo['user_id'] !== Auth::id())) {
             return $this->handleError('Todo not found!');
         }
         return $this->handleResponse(new TodoResource($todo), 'Todo retrieved.');
