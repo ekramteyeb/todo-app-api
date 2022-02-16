@@ -56,7 +56,7 @@
 </ul>
 
 <h4> Deployed to heroku  </h4>
- <p> The api is served over Heroku host server , so it is possible to use the services on the link below.</p>
+ <p> The api is served over Heroku host server , so it is possible to use the services on the link below. Postman or other similar tools are recommended to play around with it.</p>
  <ul>
      <li>- POST :  https://todo-php-api.herokuapp.com/api/v1/register </li>
             - email , password , confirm_password , name - inputs are needed 
@@ -67,24 +67,7 @@
      <li>- GET : https://todo-php-api.herokuapp.com/api/v1/todos </li>
      <li>- GET : https://todo-php-api.herokuapp.com/api/v1/todos/id</li>
      - individual todo
-     <li></li>
-     <li></li>
-     <li></li>
- 
-        
 
-
-        
-
- 
-       
-
- 
-
- 
-            
-
-            
  </ul>
 
             </div>
