@@ -65,9 +65,19 @@
      <li>- POST :  https://todo-php-api.herokuapp.com/api/v1/todos</li>
             -  name , description, status(optional , but ['NotStarted, 'OnGoing', 'Completed'])  (of a todo)
      <li>- GET : https://todo-php-api.herokuapp.com/api/v1/todos </li>
+
      <li>- GET : https://todo-php-api.herokuapp.com/api/v1/todos/id</li>
      - individual todo
 
+      <li>- GET : https://todo-php-api.herokuapp.com/api/v1/todos/id?status=Completed</li>
+
+      - individual todo filterd by the status ['NotStarted, 'OnGoing', 'Completed']
+
+      <li>- PUT : https://todo-php-api.herokuapp.com/api/v1/todos/id?status={chooseStatus}</li>
+
+     <li>- DELETE : https://todo-php-api.herokuapp.com/api/v1/todos/id</li>
+
+        
  </ul>
 
             </div>
