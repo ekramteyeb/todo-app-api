@@ -37,41 +37,55 @@
             @endif
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <h1>TODO-API: php laravel application</h1>
+                <h1>Personal TODO-API: php laravel application</h1>
                 <h5>Hosted in Heroku server</h5>
-                ## <p>PHP-laravel-API-app</p>
+                
  
-## A personal todo api 
 
-Features : 
-- user register/login
-- authentication/authorization
-- uses can read, edit , delete only thier own todos
-- password encryption
-- a user can create multiple todos 
-- a todo is owend by a user 
-_ a status query param can be included to return only todos of specific status
+<h5>Features : </h5>
+<ul>
 
+    <li>- user register/login</li>
+    <li>- authentication/authorization</li>
+    <li>- uses can read, edit , delete only thier own todos</li>
+    <li>- password encryption</li>
+    <li>- a user can create multiple todos </li>
+    <li>- a todo is owend by a user </li>
+    <li>a status query param can be included to return only todos of specific status</li>
 
-## Deployed to heroku  
- The api is served over Heroku host server , so it is possible to use the services on the link below.
+</ul>
+
+<h4> Deployed to heroku  </h4>
+ <p> The api is served over Heroku host server , so it is possible to use the services on the link below.</p>
+ <ul>
+     <li>- POST :  https://todo-php-api.herokuapp.com/api/v1/register </li>
+            - email , password , confirm_password , name - inputs are needed 
+     <li> - POST : https://todo-php-api.herokuapp.com/api/v1/login </li>
+            - email , password
+     <li>- POST :  https://todo-php-api.herokuapp.com/api/v1/todos</li>
+            -  name , description, status(optional , but ['NotStarted, 'OnGoing', 'Completed'])  (of a todo)
+     <li>- GET : https://todo-php-api.herokuapp.com/api/v1/todos </li>
+     <li>- GET : https://todo-php-api.herokuapp.com/api/v1/todos/id</li>
+     - individual todo
+     <li></li>
+     <li></li>
+     <li></li>
  
- - POST :  https://todo-php-api.herokuapp.com/api/v1/register 
-        - email , password , confirm_password , name - inputs are needed 
+        
 
- - POST : https://todo-php-api.herokuapp.com/api/v1/login 
-        - email , password
 
- - POST :  https://todo-php-api.herokuapp.com/api/v1/todos
-       -  name , description, status(optional , but ['NotStarted, 'OnGoing', 'Completed'])  (of a todo)
+        
 
- - GET : https://todo-php-api.herokuapp.com/api/v1/todos 
+ 
+       
 
- - GET : https://todo-php-api.herokuapp.com/api/v1/todos/id
-            - individual todo
+ 
+
+ 
             
+
             
- 
+ </ul>
 
             </div>
         </div>
