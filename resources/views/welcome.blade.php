@@ -39,6 +39,40 @@
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <h1>TODO-API: php laravel application</h1>
                 <h5>Hosted in Heroku server</h5>
+                ## <p>PHP-laravel-API-app</p>
+ 
+## A personal todo api 
+
+Features : 
+- user register/login
+- authentication/authorization
+- uses can read, edit , delete only thier own todos
+- password encryption
+- a user can create multiple todos 
+- a todo is owend by a user 
+_ a status query param can be included to return only todos of specific status
+
+
+## Deployed to heroku  
+ The api is served over Heroku host server , so it is possible to use the services on the link below.
+ 
+ - POST :  https://todo-php-api.herokuapp.com/api/v1/register 
+        - email , password , confirm_password , name - inputs are needed 
+
+ - POST : https://todo-php-api.herokuapp.com/api/v1/login 
+        - email , password
+
+ - POST :  https://todo-php-api.herokuapp.com/api/v1/todos
+       -  name , description, status(optional , but ['NotStarted, 'OnGoing', 'Completed'])  (of a todo)
+
+ - GET : https://todo-php-api.herokuapp.com/api/v1/todos 
+
+ - GET : https://todo-php-api.herokuapp.com/api/v1/todos/id
+            - individual todo
+            
+            
+ 
+
             </div>
         </div>
     </body>
