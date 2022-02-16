@@ -13,12 +13,27 @@ Features :
 _ a status query param can be included to return only todos of specific status
 
 
+## Deployed to heroku  
+ The api is served over Heroku host server , so it is possible to use the services on the link below.
+ 
+ - POST :  https://todo-php-api.herokuapp.com/api/v1/register 
+        - email , password , confirm_password , name - inputs are needed 
+
+ - POST : https://todo-php-api.herokuapp.com/api/v1/login 
+        - email , password
+
+ - POST :  https://todo-php-api.herokuapp.com/api/v1/todos
+       -  name , description, status(optional , but ['NotStarted, 'OnGoing', 'Completed'])  (of a todo)
+
+ - GET : https://todo-php-api.herokuapp.com/api/v1/todos 
+
+## Or in Local machine 
+
 ## Required  to install : 
 - php 
 - composer 
 - laravel framework
 - POSTMAN(preferable)
-
 - postgres , or mysql database (should be configured in .env file), start it in local machine and should be connected to the application. Configuring (DB_) fields in .env file would be enough to connect to the database.
 
 ## Steps to Run the app in your local machin:
