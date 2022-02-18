@@ -40,12 +40,8 @@
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <h1>Personal TODO-API: php laravel application</h1>
                 <h5>Hosted in Heroku server</h5>
-                
- 
-
                 <h5>Features : </h5>
                 <ul>
-
                     <li>- user register/login</li>
                     <li>- authentication/authorization</li>
                     <li>- uses can read, edit , delete only thier own todos</li>
@@ -85,7 +81,6 @@
                     E-mail: <input type="text" name="email"><br>
                     <input type="submit">
                 </form> -->
-
             </div>
         </div>
     </body>
