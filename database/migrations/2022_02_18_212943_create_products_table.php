@@ -10,8 +10,6 @@ return new class extends Migration
      * Run the migrations.
      *
      * @return void
-     * 
-     * 
      */
     public function up()
     {
@@ -19,11 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('details');
-            $table->integer('price');
-            $table->string('status');
-            $table->string('image');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->decimal('price');
+            $table->enum('status', ['NotAvailable','Available','ComingSoon']);
+            $table->enum('category', ['Cake','SoftDrink','Soup','MainDish', 'HotDrink', 'Juice']);
+            $table->longText('image');
             $table->timestamps();
         });
     }

@@ -31,8 +31,11 @@ class ProductController extends BaseController
         $input = $request->all();
         $validator = Validator::make($input, [
             'name' => 'required',
-            'status' => 'nullable',/* , Rule::in(['NotStarted','OnGoing','Completed']) */
-            'user_id' => 'nullable',
+            'status' => 'required',/* , Rule::in(['Available','NotAvailable','Coming Soon']) */
+            'price' => 'required',
+            'category' => 'required',
+            'image' => 'nullable',
+            'details' => 'nullable',
            
         ]);
         if($validator->fails()){
@@ -40,10 +43,10 @@ class ProductController extends BaseController
             return $this->handleError($validator->errors());       
         }
         //$input->user_id = Auth::id();
-        $input['user_id'] = Auth::id();
-        $input['status'] = $request['status'] ? $input['status'] : 'NotStarted'; 
-        $Product = Product::create($input);
-        return $this->handleResponse(new ProductResource($Product), 'Product created!');
+        //$input['user_id'] = Auth::id();
+        //$input['status'] = $request['status'] ? $input['status'] : 'Available'; 
+        $product = Product::create($input);
+        return $this->handleResponse(new ProductResource($product), 'Product created!');
     }
 
     public function show($id)
