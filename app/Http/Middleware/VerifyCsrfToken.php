@@ -12,6 +12,11 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        //
+        //this is added to check cors
+    
+       'api/*',
+        'sub.domain.zone' => [
+      'prefix/*'
+    ],
     ];
 }
