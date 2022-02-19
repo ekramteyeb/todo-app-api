@@ -20,10 +20,8 @@ use App\Http\Controllers\API\AuthController;
 Route::middleware('auth:sanctum')->group( function () {
     
     Route::resource('/v1/todos', TodoController::class);
-    
+    Route::resource('/v1/products', ProductController::class);
 });
-Route::resource('/v1/products', ProductController::class);
-
 
 Route::post('/v1/login', [AuthController::class, 'login']);
 Route::post('/v1/register', [AuthController::class, 'register']);
