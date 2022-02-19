@@ -15,8 +15,6 @@ class VerifyCsrfToken extends Middleware
         //this is added to check cors
     
        'api/*',
-        'sub.domain.zone' => [
-      'prefix/*'
-    ],
+        
     ];
 }
