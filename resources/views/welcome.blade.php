@@ -57,9 +57,9 @@
                 <ul>
                     <li>- POST :  https://todo-php-api.herokuapp.com/api/v1/register </li>
                             - email , password , confirm_password , name - inputs are needed 
-                    <li> - POST : https://todo-php-api.herokuapp.com/api/v1/login </li>
+                    <li> - POST: https://todo-php-api.herokuapp.com/api/v1/login </li>
                             - email , password
-                    <li>- POST :  https://todo-php-api.herokuapp.com/api/v1/todos</li>
+                    <li>- POST:  https://todo-php-api.herokuapp.com/api/v1/todos</li>
                             -  name , description, status(optional , but ['NotStarted, 'OnGoing', 'Completed'])  (of a todo)
                     <li>- GET: https://todo-php-api.herokuapp.com/api/v1/todos </li>
 
