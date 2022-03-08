@@ -64,7 +64,7 @@ Since all of routes are protected by laravel/sanctum , first thing needed is  to
     * Post :  http//localhost:8000/api/v1/login 
         * using : email , password
 
-* Then free to go. Postman is  handy tool  play around with this. 
+* Then free to go. Postman is  handy tool to play around with this. 
      N.B the returned token should be send back to server via Bearer token header or other way
 
     * GET : http//localhost:8000/api/v1/todos   // get all the todos of the user
