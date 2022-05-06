@@ -1,8 +1,8 @@
 @extends('layouts.default')
 @section('content')
-   <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+   <div class="">
                 <h1>Personal TODO-API: php laravel application</h1>
-                <h5>Hosted in Heroku server</h5>
+                <h5>Hosted in Heroku server : index</h5>
                 <h5>Features : </h5>
                 <ul>
                     <li>- user register/login</li>
@@ -37,6 +37,5 @@
 
                     <li>- DELETE : https://todo-php-api.herokuapp.com/api/v1/todos/id</li>
 
-                        
                 </ul>
 @stop

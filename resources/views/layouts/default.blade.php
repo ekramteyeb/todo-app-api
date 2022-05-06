@@ -4,12 +4,12 @@
       @include('includes.head')
       <!-- <title>DemoLaravel - @yield('title')</title> -->
    </head>
-   <body class="antialiased">
+   <body class="">
       <header class="row">
          @include('includes.header')
       </header>
 
-      <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+      {{-- <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
          @if (Route::has('login'))
                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                   @auth
@@ -23,9 +23,9 @@
                   @endauth
                </div>
          @endif
-      
-         <div id="main" class="row" >
-               @yield('content')
+      </div> --}}
+         <div id="main" class="container" >
+                @yield('content')
          </div>
          
          <footer class="row">
