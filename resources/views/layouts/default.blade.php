@@ -4,7 +4,7 @@
       @include('includes.head')
       <!-- <title>DemoLaravel - @yield('title')</title> -->
    </head>
-   <body class="">
+   <body class="antialiased">
       <header class="row">
          @include('includes.header')
       </header>
@@ -24,11 +24,11 @@
                </div>
          @endif
       </div> --}}
-         <div id="main" class="container" >
+         <div id="main" class="row container" >
                 @yield('content')
          </div>
          
-         <footer class="row">
+         <footer class="row container">
             @include('includes.footer')
          </footer>
       </div>
