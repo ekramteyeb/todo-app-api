@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\PagesController;
+use App\Http\Controllers\Web\TodosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +17,13 @@ use App\Http\Controllers\Web\PagesController;
 /* Route::get('/', function(){
     return View::make('pages.home'); 
 }); */
+/* Route::get('/', [PagesController::class, 'index']);
+*/
 Route::get('/', [PagesController::class, 'index']);
-
 Route::get('/login', [PagesController::class, 'login']); 
-Route::get('/services', [PagesController::class, 'services']); 
+  
+
+Route::resource('todos', TodosController::class); 
  
 /* Route::get('/contact', function(){
     return View::make('pages.contact'); 

@@ -13,16 +13,4 @@ class PagesController extends Controller
     public function login(){
         return view('pages.login'); 
     }
-    public function services(){
-        
-        $data = array(
-            'title' => 'Service Page',
-            'services' => [
-            'Front End',
-            'Back End',
-            'Database'
-            ]
-        ); 
-        return view('pages.services')->with($data); 
-    }
 }
