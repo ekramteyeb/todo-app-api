@@ -24,7 +24,7 @@
                </div>
          @endif
       </div> --}}
-         <div id="main" class="row container" >
+         <div id="main" class="container" >
                 @yield('content')
          </div>
          
