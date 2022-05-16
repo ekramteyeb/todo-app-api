@@ -8,7 +8,7 @@
                 <a href="/todos/{{$todo->id}}"><h1>{{$todo->name}}</h1></a>
                 <div class="p-2 bg-info text-brown">
                     <p>Description :  {{$todo->description}}</p>
-                    <p>Status :  {{$todo->description}}</p>
+                    <p>Status:  {{$todo->description}}</p>
                     <small>Created at : {{$todo->created_at}} by {{$todo->user_id}}</small> 
                 </div>
             </li> 
