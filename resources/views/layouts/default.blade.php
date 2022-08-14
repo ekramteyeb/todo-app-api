@@ -25,7 +25,8 @@
          @endif
       </div> --}}
          <div id="main" class="container" >
-                @yield('content')
+            
+            @yield('content')
          </div>
          
          <footer class="row container">

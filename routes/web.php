@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\PagesController;
 use App\Http\Controllers\Web\TodosController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +15,17 @@ use App\Http\Controllers\Web\TodosController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-/* Route::get('/', function(){
-    return View::make('pages.home'); 
-}); */
+ Route::get('/', function(){
+    return view('welcome'); 
+});
+Route::resource('/home', HomeController::class); 
+
 /* Route::get('/', [PagesController::class, 'index']);
 */
-Route::get('/', [PagesController::class, 'index']);
-Route::get('/login', [PagesController::class, 'login']); 
+//Route::resource('/', [PagesController::class, 'index']);
+Auth::routes();
+Route::resource('pages', PagesController::class);
+//Route::get('/login', [PagesController::class, 'login']); 
   
 
 Route::resource('todos', TodosController::class); 
@@ -34,3 +39,6 @@ Route::resource('todos', TodosController::class);
     $data = ['Hussen', 'Reem', 'Ahmed', 'Afnan', 'Aziza'];
     return view('child');
 }); */
+
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
