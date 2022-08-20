@@ -33,7 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -79,5 +79,14 @@
             @yield('content')
         </main>
     </div>
+
+    {{-- Laravel collective form to function --}}
+    <script src="//cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
+{{-- <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script> --}}
+
+<script>
+    CKEDITOR.replace( 'article-ckeditor' );
+</script>
+
 </body>
 </html>

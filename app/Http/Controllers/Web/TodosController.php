@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Todo;
+use Auth;
 class TodosController extends Controller
 {
     /**
@@ -35,6 +36,7 @@ class TodosController extends Controller
     public function create()
     {
         //
+        return view('todos.create');
     }
 
     /**
@@ -45,7 +47,13 @@ class TodosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $userId = Auth::id();
+        $todo = new Todo;
+        $todo->name = $request->input('name');
+        $todo->description = $request->input('description');
+        $todo->user_id = $userId;
+        $todo->save();
+        return redirect('/home');
     }
 
     /**
@@ -92,6 +100,6 @@ class TodosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return 'todo deleted';
     }
 }

@@ -18,12 +18,14 @@ use App\Http\Controllers\HomeController;
  Route::get('/', function(){
     return view('welcome'); 
 });
+
 Route::resource('/home', HomeController::class); 
 
 /* Route::get('/', [PagesController::class, 'index']);
 */
 //Route::resource('/', [PagesController::class, 'index']);
 Auth::routes();
+
 Route::resource('pages', PagesController::class);
 //Route::get('/login', [PagesController::class, 'login']); 
   

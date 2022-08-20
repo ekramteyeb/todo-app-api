@@ -14,6 +14,7 @@
                         </div>
                     @endif
                     <h1 class="text-primary text-center">Todos - lists</h1>
+                    <a href="/todos/create" class="btn btn-primary mb-2">Create Todo</a>
                     {{-- {{ __('You are logged in!') }} --}}
                     @if(count($todos) > 0)
                         <ul class="list-group well">
@@ -22,7 +23,29 @@
                                     <h3 ><a href="/todos/edit/{{$todo->id}}" class="text-success">{{$todo->name}}</a></h3>
                                     <p >{{$todo->description}}</p>
                                     <p>{{$todo->status}}</p>
+
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="inputGroupSelect01">Status</label>
+                                        </div>
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option >Make me...</option>
+                                            <option {{( $todo->status == 'NotStarted') && selected}}>Choose...</option>
+                                            <option value="NotStarted">NotStarted</option>
+                                            <option value="OnGoing">OnGoing</option>
+                                            <option value="Completed">Completed</option>
+                                        </select>
+                                    </div>
+
                                     <p>{{$todo->created_at}}</p>
+                                    @csrf
+                                    {{-- <form action="/todos/delete/{{$todo->id}}" method="POST">
+                                        <button class="btn btn-danger">Delete</button>
+                                    </form> --}}
+                                    {!!Form::open(['action' => ['App\Http\Controllers\HomeController@destroy',$todo->id], 'method'=> 'POST', 'class'=>'pull-right'])!!}
+                                        {{Form::hidden('_method', 'DELETE')}}
+                                        {{Form::submit('Delete', ['class'=>'btn btn-danger'])}}
+                                    {!!Form::close()!!}
                                 </div> 
                             @endforeach
                         </ul>
