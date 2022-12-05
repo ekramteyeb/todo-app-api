@@ -29,7 +29,7 @@
                                         </div>
                                         <select class="custom-select" id="inputGroupSelect01">
                                             <option >Make me...</option>
-                                            <option {{( $todo->status == 'NotStarted') && selected}}>Choose...</option>
+                                            {{-- <option {{( $todo->status == 'NotStarted') && selected}}>Choose...</option> --}}
                                             <option value="NotStarted">NotStarted</option>
                                             <option value="OnGoing">OnGoing</option>
                                             <option value="Completed">Completed</option>

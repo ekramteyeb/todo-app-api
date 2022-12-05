@@ -3,6 +3,7 @@
    
    <div style="width:80%; padding-left:1%">
       <br>
+     
       <h3>{{$todo->name}}</h3>
       <p>Desc :  {{$todo->description}}</p>
       <p>Status :  {{$todo->status}}</p>
