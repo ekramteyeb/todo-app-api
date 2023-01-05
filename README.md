@@ -2,7 +2,7 @@
 ## <p>PHP-laravel-API-app</p>
  
 ## A personal todo api 
-
+## Back end 
 Features : 
 - user register/login
 - authentication/authorization
@@ -11,8 +11,6 @@ Features :
 - a user can create multiple todos 
 - a todo is owend by a user 
 _ a status query param can be included to return only todos of specific status
-
-
 
 
 
@@ -89,6 +87,14 @@ Since all of routes are protected by laravel/sanctum , first thing needed is  to
 
 ## Features to add : 
 * changePassword
+
+
+## Front end(User interface is also added)
+# to run and start the app 
+- in the root directory 
+- yarn install 
+- $ yarn run dev 
+
  
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
