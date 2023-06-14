@@ -19,21 +19,33 @@
                         <ul class="list-group well">
                             @foreach ($todos as $todo)
                                 <div class="list-group-item m-1 py-3 well">
-                                    <h3 ><a href="/todos/edit/{{$todo->id}}" class="text-success">{{$todo->name}}</a></h3>
+                                    <h3 ><a href="/todos/{{$todo->id}}" class="text-success">{{$todo->name}}</a></h3>
                                     <p >{{$todo->description}}</p>
-                                    <p>{{$todo->status}}</p>
+                                    <p class="text-white fs-4 p-2 bg-secondary">{{$todo->status}}</p>
 
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <label class="input-group-text" for="inputGroupSelect01">Status</label>
+                                           {{--  <label class="input-group-text" for="inputGroupSelect01">Status</label> --}}
                                         </div>
-                                        <select class="custom-select" id="inputGroupSelect01">
+                                        {{-- <select class="custom-select" id="inputGroupSelect01">
                                             <option >Make me...</option>
-                                            {{-- <option {{( $todo->status == 'NotStarted') && selected}}>Choose...</option> --}}
                                             <option value="NotStarted">NotStarted</option>
                                             <option value="OnGoing">OnGoing</option>
                                             <option value="Completed">Completed</option>
-                                        </select>
+                                        </select> --}}
+                                        <form action="{{ route('todos.update', ['todo' => $todo->id]) }}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                        
+                                            <select name="status">
+                                                <option value="#">Choose Status</option>
+                                                <option value="OnGoing">OnGoing</option>
+                                                <option value="NotStarted">NotStarted</option>
+                                                <option value="Completed">Completed</option>
+                                            </select>
+                                        
+                                            <button type="submit">Update Status</button>
+                                        </form>
                                     </div>
 
                                     <p>{{$todo->created_at}}</p>

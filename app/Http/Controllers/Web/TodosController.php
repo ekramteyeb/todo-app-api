@@ -79,7 +79,7 @@ class TodosController extends Controller
     {
         //
         $todo = Todo::find($id);
-        return view('todos.todo')->with('todo', $todo);
+        return view('todos.todos')->with('todo', $todo);
     }
 
     /**
@@ -92,6 +92,15 @@ class TodosController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $todo = Todo::findOrFail($id);
+        $status = $request->input('status');
+
+        // Update the status of the todo item
+        $todo->status = $status;
+        $todo->save();
+
+    // Optionally, you can return a response or redirect to a specific page
+    return redirect()->back()->with('success', 'Todo status updated successfully.');
     }
 
     /**
