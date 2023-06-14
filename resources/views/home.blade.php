@@ -37,14 +37,14 @@
                                             @csrf
                                             @method('PUT')
                                         
-                                            <select name="status">
+                                            <select name="status" class="p-1">
                                                 <option value="#">Choose Status</option>
                                                 <option value="OnGoing">OnGoing</option>
                                                 <option value="NotStarted">NotStarted</option>
                                                 <option value="Completed">Completed</option>
                                             </select>
                                         
-                                            <button type="submit">Update Status</button>
+                                            <button type="submit" class="btn btn-info">Update Status</button>
                                         </form>
                                     </div>
 
